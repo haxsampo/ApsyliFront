@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import Dropdown from './components/Dropdown'
 
-function App() {
+
+const App = () => {
+
+
+  const options = [
+    { value: "atskeekki", label: "Atsteekki" },
+    { value: "gootti", label: "Gootti" },
+    { value: "b", label: "1" },
+    { value: "a", label: "2" },
+    { value: "c", label: "3" },
+    { value: "d", label: "4" },
+    { value: "e", label: "5" },
+    { value: "f", label: "6" },
+    { value: "g", label: "7" },
+    { value: "h", label: "8" }
+  ]
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dropdown
+        isSearchable
+        isMulti
+        placeHolder="Select..."
+        options={options}
+        onChange={(value) => console.log(value)}
+      />
+
+      <Dropdown
+        isSearchable
+        isMulti
+        placeHolder="Select..."
+        options={options}
+        onChange={(value) => console.log(value)}
+      />
     </div>
   );
 }
+
 
 export default App;
